@@ -12,10 +12,22 @@ import {
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
-  image: { maxWidth: "100%", maxHeight: "100%" },
-  appBar: { height: theme.spacing(7), boxShadow: "0 0 0 0.2px" },
-  toolBar: { paddingLeft: 0, paddingRight: 0 },
-  appBarLogo: { height: theme.spacing(4), marginTop: theme.spacing(1) },
+  image: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+  },
+  appBar: {
+    height: theme.spacing(7),
+    boxShadow: "0 0 0 0.2px",
+  },
+  toolBar: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+  appBarLogo: {
+    height: theme.spacing(4),
+    marginTop: theme.spacing(1),
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,

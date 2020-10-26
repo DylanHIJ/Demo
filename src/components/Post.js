@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Post(props) {
-  const { id } = props;
+  const { id, tab } = props;
   const [isHover, setIsHover] = useState(false);
   const classes = useStyles();
 
@@ -61,7 +61,7 @@ export default function Post(props) {
         <CircularProgress />
       </div>
       <img
-        src={`/covers/${id}.jpg`}
+        src={`/${tab}/${id}.jpg`}
         className={classes.image}
         alt={`album_cover_${id}`}
       />

@@ -29,7 +29,7 @@ export default function Highlight() {
       {Array.from(new Array(9), (val, index) => 2 * index + 1).map((value) => (
         <li key={value}>
           <a href="/">
-            <Avatar src={`covers/${value}.jpg`} className={classes.highlight} />
+            <Avatar src={`post/${value}.jpg`} className={classes.highlight} />
           </a>
           <p className={classes.highlightCaption}>{`Highlight_${value}`}</p>
         </li>

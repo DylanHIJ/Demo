@@ -53,7 +53,7 @@ export default function Profile(props) {
       <div>
         <ul className={classes.info}>
           <li className={classes.listItem}>
-            <span className={classes.number}>{numPosts}</span> Posts
+            <span className={classes.number}>{numPosts.post}</span> Posts
           </li>
           <li className={classes.listItem}>
             <span className={classes.number}>{numFollowers}</span> Followers

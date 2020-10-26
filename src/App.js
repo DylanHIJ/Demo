@@ -1,75 +1,52 @@
 import { React, useState } from "react";
-import { Container, Button, Grid, Avatar, makeStyles } from "@material-ui/core";
+import { Container, Button, makeStyles } from "@material-ui/core";
 
+import Account from "./components/Account";
 import Gallery from "./containers/Gallery";
 import Navbar from "./components/Navbar";
-import Profile from "./containers/Profile";
 import Highlight from "./containers/Highlight";
 import ButtonGroup from "./components/ButtonGroup";
 import "./App.css";
 
-const useStyles = makeStyles((theme) => ({
-  avatar: {
-    display: "flex",
-    justifyContent: "center",
-    margin: 30,
-  },
-
+const useStyles = makeStyles({
   loadMore: {
     display: "flex",
     justifyContent: "center",
     margin: 20,
   },
-
-  avatarImg: {
-    width: theme.spacing(20),
-    height: theme.spacing(20),
-    border: "solid 1px rgba(0, 0, 0, 0.15)",
-  },
-}));
+});
 
 export default function App() {
   const [numImages, setNumImages] = useState(9);
-  const [showLoadMore, setShowLoadMore] = useState(true);
-  const [numPosts] = useState(19);
+  const [currentTab, setCurrentTab] = useState("post");
+  const [numPosts] = useState({ post: 19, igtv: 4, tagged: 19 });
   const [numFollowers] = useState(5173);
   const [numFollowings] = useState(227);
 
   const classes = useStyles();
   const handleLoadMore = () => {
-    if (numImages + 9 >= numPosts) setShowLoadMore(false);
-    setNumImages(Math.min(numImages + 9, numPosts));
+    setNumImages(Math.min(numImages + 9, numPosts[currentTab]));
   };
 
   return (
     <>
       <Navbar />
       <Container maxWidth="md">
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <div className={classes.avatar}>
-              <a href="https://www.instagram.com/memopresso/">
-                <Avatar
-                  alt="Memopresso"
-                  src="/user_avatar.jpg"
-                  className={classes.avatarImg}
-                />
-              </a>
-            </div>
-          </Grid>
-          <Grid item xs={8}>
-            <Profile
-              numPosts={numPosts}
-              numFollowers={numFollowers}
-              numFollowings={numFollowings}
-            />
-          </Grid>
-        </Grid>
+        <Account
+          numPosts={numPosts}
+          numFollowers={numFollowers}
+          numFollowings={numFollowings}
+        />
         <Highlight />
-        <ButtonGroup />
-        <Gallery numImages={numImages} />
+        <ButtonGroup
+          currentTab={currentTab}
+          numPosts={numPosts}
+          setCurrentTab={setCurrentTab}
+          setNumImages={setNumImages}
+        />
+        <Gallery numImages={numImages} tab={currentTab} />
         <div className={classes.loadMore}>
-          {showLoadMore && (
+          {numImages < numPosts[currentTab] && (
             <Button variant="outlined" onClick={handleLoadMore}>
               Load More
             </Button>
