@@ -64,10 +64,28 @@ export default function Profile(props) {
         </ul>
       </div>
       <div>
-        <h4>MEMOPRESSO | 📌 Taiwan</h4>
+        <h4>
+          MEMOPRESSO |{" "}
+          <span role="img" aria-label="pin">
+            📌
+          </span>{" "}
+          Taiwan
+        </h4>
         <span>
-          💌Keep your memories forever. 📍台灣✈️韓國<br></br>
-          #memopresso 分享你的列印美照✨合作事宜請洽business@memopresso.com
+          <span role="img" aria-label="love-letter">
+            💌
+          </span>
+          Keep your memories forever.{" "}
+          <span role="img" aria-label="lollipop">
+            📍
+          </span>
+          台灣✈️韓國
+          <br />
+          #memopresso 分享你的列印美照
+          <span role="img" aria-label="shine">
+            ✨
+          </span>
+          合作事宜請洽business@memopresso.com
         </span>
         <a
           href="https://l.instagram.com/?u=http%3A%2F%2Flinktr.ee%2Fmemopresso&e=ATP_EyK_g73YYZtELo1CORGSpZcyAtiECWQYQyC1joZvpfJmJOnDkgzepuHvkStmNO-6MHiZVXxB5RfW&s=1inktr.ee/memopresso"

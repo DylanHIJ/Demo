@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Highlight(props) {
+export default function Highlight() {
   const classes = useStyles();
   return (
     <ul className={classes.highlightList}>

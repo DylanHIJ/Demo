@@ -2,10 +2,10 @@ import { React, useState } from "react";
 import { Container, Button, Grid, Avatar, makeStyles } from "@material-ui/core";
 
 import Gallery from "./containers/Gallery";
-import Navbar from "./containers/Navbar";
+import Navbar from "./components/Navbar";
 import Profile from "./containers/Profile";
 import Highlight from "./containers/Highlight";
-import ButtonGroup from "./containers/ButtonGroup";
+import ButtonGroup from "./components/ButtonGroup";
 import "./App.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,7 @@ export default function App() {
   const [numFollowings] = useState(227);
 
   const classes = useStyles();
-  const handleLoadMore = (event) => {
+  const handleLoadMore = () => {
     if (numImages + 9 >= numPosts) setShowLoadMore(false);
     setNumImages(Math.min(numImages + 9, numPosts));
   };

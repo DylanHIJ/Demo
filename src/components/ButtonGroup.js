@@ -22,10 +22,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
   },
 }));
-export default function ButtonGroup(props) {
+export default function ButtonGroup() {
   const [control, setControl] = useState("post");
   const handleControl = (event) => {
-    console.log(event.target.innerText);
     if (event.target.innerText === "POST") setControl("post");
     else if (event.target.innerText === "IG TV") setControl("igtv");
     else if (event.target.innerText === "TAGGED") setControl("tagged");

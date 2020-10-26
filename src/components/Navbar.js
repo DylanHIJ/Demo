@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Navbar(props) {
+export default function Navbar() {
   const classes = useStyles();
   return (
     <AppBar position="sticky" color="inherit" className={classes.appBar}>
